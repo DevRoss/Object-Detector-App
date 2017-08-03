@@ -125,8 +125,8 @@ if __name__ == '__main__':
     child_process.start()
 
     video_capture = cv2.VideoCapture(0)
-    video_capture.set(cv2.CAP_PROP_FRAME_WIDTH, 480)
-    video_capture.set(cv2.CAP_PROP_FRAME_HEIGHT, 360)
+    video_capture.set(cv2.cv.CV_CAP_PROP_FRAME_WIDTH, 480)
+    video_capture.set(cv2.cv.CV_CAP_PROP_FRAME_HEIGHT, 360)
 
     while True:
         _, frame = video_capture.read()
@@ -137,3 +137,5 @@ if __name__ == '__main__':
 
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
+    video_capture.release()
+    cv2.destroyAllWindows()
